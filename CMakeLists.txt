@@ -172,7 +172,7 @@ else()
     add_library(spdlog STATIC ${SPDLOG_SRCS} ${SPDLOG_ALL_HEADERS})
 endif()
 
-add_library(spdlog::spdlog ALIAS spdlog)
+# add_library(spdlog::spdlog ALIAS spdlog)
 
 set(SPDLOG_INCLUDES_LEVEL "")
 if(SPDLOG_SYSTEM_INCLUDES)
@@ -198,7 +198,7 @@ endif()
 # Header only version
 # ---------------------------------------------------------------------------------------
 add_library(spdlog_header_only INTERFACE)
-add_library(spdlog::spdlog_header_only ALIAS spdlog_header_only)
+# add_library(spdlog::spdlog_header_only ALIAS spdlog_header_only)
 
 target_include_directories(
     spdlog_header_only ${SPDLOG_INCLUDES_LEVEL} INTERFACE "$<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include>"
